@@ -10,14 +10,19 @@
 class App {
   constructor() {
     const menuElement = document.querySelector('#menu');
-    this.menu = new MenuScreen(menuElement);
 
     const mainElement = document.querySelector('#main');
-    this.flashcards = new FlashcardScreen(mainElement);
 
     const resultElement = document.querySelector('#results');
+
     this.results = new ResultsScreen(resultElement);
 
+    this.flashcards = new FlashcardScreen(mainElement,this.results);
+    
+    this.menu = new MenuScreen(menuElement,this.flashcards,this.results);
+
+    
+    
     // Uncomment this pair of lines to see the "flashcard" screen:
     // this.menu.hide();
     // this.flashcards.show();
@@ -25,5 +30,7 @@ class App {
     // Uncomment this pair of lines to see the "results" screen:
     // this.menu.hide();
     // this.results.show();
+    //var flashcard=this.flashcards.show.bind(this);
+
   }
 }

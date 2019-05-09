@@ -1,3 +1,20 @@
 /*
 TODO(you): Write any additional styles you need here.
 */
+.hidden{
+	display:none;
+}
+.left{
+
+}
+.flashcard-box .word {
+    animation-duration:pop 0.5s;
+}
+@keyframes pop{
+   from{
+       	transform:translateY(100%);
+   }
+   to{
+		transform:translateY(0);
+   }
+}
